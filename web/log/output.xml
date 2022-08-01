@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220801 16:35:08.104" rpa="false" schemaversion="3">
+<suite id="s1" name="Cadastro" source="C:\ticto\web\cadastro.robot">
+<test id="s1-t1" name="Realizar cadastro com nome inválido" line="9">
+<kw name="nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220801 16:35:08.265" level="INFO">Opening browser 'chrome' to base url 'https://qa-test.ticto.io/'.</msg>
+<status status="PASS" starttime="20220801 16:35:08.265" endtime="20220801 16:35:10.536"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:08.265" endtime="20220801 16:35:10.536"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220801 16:35:10.537" level="INFO">Opening url 'https://qa-test.ticto.io/'</msg>
+<status status="PASS" starttime="20220801 16:35:10.536" endtime="20220801 16:35:10.729"/>
+</kw>
+<kw name="Login e senha">
+<arg>1234</arg>
+<arg>efraimvasconcelos@ticto.com</arg>
+<arg>123456789</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="name"]</arg>
+<arg>${usuraio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:10.730" level="INFO">Typing text '1234' into text field 'css:input[name="name"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:10.730" endtime="20220801 16:35:10.781"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="email"]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:10.782" level="INFO">Typing text 'efraimvasconcelos@ticto.com' into text field 'css:input[name="email"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:10.781" endtime="20220801 16:35:10.835"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:10.835" level="INFO">Typing password into text field 'css:input[name="password"]'.</msg>
+<msg timestamp="20220801 16:35:10.857" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220801 16:35:10.879" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220801 16:35:10.835" endtime="20220801 16:35:10.879"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class:mt-3</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:10.880" level="INFO">Clicking button 'class:mt-3'.</msg>
+<status status="PASS" starttime="20220801 16:35:10.880" endtime="20220801 16:35:11.366"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:10.730" endtime="20220801 16:35:11.366"/>
+</kw>
+<kw name="Mensagem de aviso">
+<arg>Insira um Nome e Sobrenome válido.</arg>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${message}</var>
+<arg>class:text-danger</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 16:35:11.374" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7552d6191921907f392a9047568ddca6", element="eaf5370f-aab8-4dec-98a5-fdf1b7931871")&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:11.367" endtime="20220801 16:35:11.374"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${message.text}</arg>
+<arg>${frase}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220801 16:35:11.374" endtime="20220801 16:35:11.382"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:11.366" endtime="20220801 16:35:11.382"/>
+</kw>
+<kw name="encerrar sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220801 16:35:11.463" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:11.383" endtime="20220801 16:35:11.464"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220801 16:35:11.464" endtime="20220801 16:35:13.543"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:11.383" endtime="20220801 16:35:13.543"/>
+</kw>
+<tag>login_error22</tag>
+<status status="PASS" starttime="20220801 16:35:08.264" endtime="20220801 16:35:13.543"/>
+</test>
+<test id="s1-t2" name="Realializar cadastro com email inválido" line="15">
+<kw name="nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220801 16:35:13.545" level="INFO">Opening browser 'chrome' to base url 'https://qa-test.ticto.io/'.</msg>
+<status status="PASS" starttime="20220801 16:35:13.545" endtime="20220801 16:35:15.703"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:13.545" endtime="20220801 16:35:15.704"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220801 16:35:15.704" level="INFO">Opening url 'https://qa-test.ticto.io/'</msg>
+<status status="PASS" starttime="20220801 16:35:15.704" endtime="20220801 16:35:15.928"/>
+</kw>
+<kw name="Login e senha">
+<arg>Efraim Vasconcelos</arg>
+<arg>efraimvasconcelosticto.com</arg>
+<arg>123456789</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="name"]</arg>
+<arg>${usuraio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:15.928" level="INFO">Typing text 'Efraim Vasconcelos' into text field 'css:input[name="name"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:15.928" endtime="20220801 16:35:15.982"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="email"]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:15.983" level="INFO">Typing text 'efraimvasconcelosticto.com' into text field 'css:input[name="email"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:15.983" endtime="20220801 16:35:16.034"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:16.034" level="INFO">Typing password into text field 'css:input[name="password"]'.</msg>
+<msg timestamp="20220801 16:35:16.058" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220801 16:35:16.081" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220801 16:35:16.034" endtime="20220801 16:35:16.081"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class:mt-3</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:16.081" level="INFO">Clicking button 'class:mt-3'.</msg>
+<status status="PASS" starttime="20220801 16:35:16.081" endtime="20220801 16:35:16.127"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:15.928" endtime="20220801 16:35:16.127"/>
+</kw>
+<kw name="encerrar sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220801 16:35:16.368" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:16.128" endtime="20220801 16:35:16.368"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220801 16:35:16.368" endtime="20220801 16:35:18.478"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:16.127" endtime="20220801 16:35:18.478"/>
+</kw>
+<tag>email_invalido</tag>
+<status status="PASS" starttime="20220801 16:35:13.544" endtime="20220801 16:35:18.479"/>
+</test>
+<test id="s1-t3" name="Realizar cadastro com senha inválida" line="20">
+<kw name="nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220801 16:35:18.480" level="INFO">Opening browser 'chrome' to base url 'https://qa-test.ticto.io/'.</msg>
+<status status="PASS" starttime="20220801 16:35:18.480" endtime="20220801 16:35:20.708"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:18.480" endtime="20220801 16:35:20.708"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220801 16:35:20.708" level="INFO">Opening url 'https://qa-test.ticto.io/'</msg>
+<status status="PASS" starttime="20220801 16:35:20.708" endtime="20220801 16:35:21.044"/>
+</kw>
+<kw name="Login e senha">
+<arg>Efraim Vasconcelos</arg>
+<arg>efraimvasconcelos@ticto.com</arg>
+<arg>1234</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="name"]</arg>
+<arg>${usuraio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:21.045" level="INFO">Typing text 'Efraim Vasconcelos' into text field 'css:input[name="name"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:21.045" endtime="20220801 16:35:21.100"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="email"]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:21.100" level="INFO">Typing text 'efraimvasconcelos@ticto.com' into text field 'css:input[name="email"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:21.100" endtime="20220801 16:35:21.151"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:21.152" level="INFO">Typing password into text field 'css:input[name="password"]'.</msg>
+<msg timestamp="20220801 16:35:21.173" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220801 16:35:21.194" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220801 16:35:21.151" endtime="20220801 16:35:21.194"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class:mt-3</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:21.195" level="INFO">Clicking button 'class:mt-3'.</msg>
+<status status="PASS" starttime="20220801 16:35:21.194" endtime="20220801 16:35:21.948"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:21.044" endtime="20220801 16:35:21.949"/>
+</kw>
+<kw name="Mensagem de aviso">
+<arg>O campo Password deve ter no minimo 8 caracteres.</arg>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${message}</var>
+<arg>class:text-danger</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 16:35:21.957" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c9e330ddf3b2aeab2fd0b5a069e4de60", element="eeae6fb7-1401-4a25-a0ea-2e7ab90403ca")&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:21.949" endtime="20220801 16:35:21.957"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${message.text}</arg>
+<arg>${frase}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220801 16:35:21.957" endtime="20220801 16:35:21.965"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:21.949" endtime="20220801 16:35:21.965"/>
+</kw>
+<kw name="encerrar sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220801 16:35:22.049" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:21.965" endtime="20220801 16:35:22.049"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220801 16:35:22.049" endtime="20220801 16:35:24.130"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:21.965" endtime="20220801 16:35:24.130"/>
+</kw>
+<tag>senha_invalida</tag>
+<status status="PASS" starttime="20220801 16:35:18.479" endtime="20220801 16:35:24.130"/>
+</test>
+<test id="s1-t4" name="Realizar cadastro com dados corretos" line="25">
+<kw name="nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220801 16:35:24.132" level="INFO">Opening browser 'chrome' to base url 'https://qa-test.ticto.io/'.</msg>
+<status status="PASS" starttime="20220801 16:35:24.132" endtime="20220801 16:35:26.325"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:24.132" endtime="20220801 16:35:26.325"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220801 16:35:26.326" level="INFO">Opening url 'https://qa-test.ticto.io/'</msg>
+<status status="PASS" starttime="20220801 16:35:26.326" endtime="20220801 16:35:26.737"/>
+</kw>
+<kw name="Login e senha">
+<arg>Efraim Vasconcelos</arg>
+<arg>efraimvasconcelos@ticto.com</arg>
+<arg>123456789</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="name"]</arg>
+<arg>${usuraio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:26.738" level="INFO">Typing text 'Efraim Vasconcelos' into text field 'css:input[name="name"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:26.737" endtime="20220801 16:35:26.793"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name="email"]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:26.794" level="INFO">Typing text 'efraimvasconcelos@ticto.com' into text field 'css:input[name="email"]'.</msg>
+<status status="PASS" starttime="20220801 16:35:26.793" endtime="20220801 16:35:26.844"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:26.845" level="INFO">Typing password into text field 'css:input[name="password"]'.</msg>
+<msg timestamp="20220801 16:35:26.867" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220801 16:35:26.890" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220801 16:35:26.844" endtime="20220801 16:35:26.890"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class:mt-3</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220801 16:35:26.891" level="INFO">Clicking button 'class:mt-3'.</msg>
+<status status="PASS" starttime="20220801 16:35:26.891" endtime="20220801 16:35:27.747"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:26.737" endtime="20220801 16:35:27.748"/>
+</kw>
+<kw name="Mensagem de sucesso">
+<arg>Usuário cadastrado com sucesso.</arg>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${message}</var>
+<arg>class:alert-success</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 16:35:27.755" level="INFO">${message} = &lt;selenium.webdriver.remote.webelement.WebElement (session="02d67676dd5bb31fb4ef4912590b3b28", element="443aa804-ca69-4c20-9a00-805192b1c9b1")&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:27.748" endtime="20220801 16:35:27.755"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${message.text}</arg>
+<arg>${sucesso}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220801 16:35:27.755" endtime="20220801 16:35:27.762"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:27.748" endtime="20220801 16:35:27.763"/>
+</kw>
+<kw name="encerrar sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220801 16:35:27.832" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220801 16:35:27.763" endtime="20220801 16:35:27.832"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220801 16:35:27.832" endtime="20220801 16:35:29.922"/>
+</kw>
+<status status="PASS" starttime="20220801 16:35:27.763" endtime="20220801 16:35:29.922"/>
+</kw>
+<tag>cadastro_valido</tag>
+<status status="PASS" starttime="20220801 16:35:24.131" endtime="20220801 16:35:29.922"/>
+</test>
+<status status="PASS" starttime="20220801 16:35:08.105" endtime="20220801 16:35:29.923"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cadastro_valido</stat>
+<stat pass="1" fail="0" skip="0">email_invalido</stat>
+<stat pass="1" fail="0" skip="0">login_error22</stat>
+<stat pass="1" fail="0" skip="0">senha_invalida</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Cadastro">Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
